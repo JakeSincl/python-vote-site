@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="{{ url_for('static', filename='styles/style.css') }}" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <div class="topnav">
+    <a class="active" href="results.html">View Results</a>
+    <a href="home.html">Current Live Poll</a>
+    <a href="feedback.html">Feedback</a>
+  </div>
+
+  {% for word_pair in words %}
+    <p>{{ word_pair[0] }} has {{ word_pair[1] }} vote(s).</p>
+    <div id="myProgress" style="border-radius: 20px">
+      <div id="myBar" style="width: {{ (((word_pair[1] | int) / total_votes)*100) }}%; height: 30px; background-color: green; border-radius: 20px"></div>
+    </div>
+    <br>
+  {% endfor %}
+
+  <div class="resultsbox">
+  </div>
+</body>
+
+</html>

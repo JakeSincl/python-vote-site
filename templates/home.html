@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Vote on Polls</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}" type="text/css" />
+</head>
+
+<body>
+  <div class="topnav">
+    <a class="active" href="home.html">Current Live Poll</a>
+    <a href="results.html">View Results</a>
+    <a href="feedback.html">Feedback</a>
+  </div>
+
+  <div class="pollbox">
+    <h1 class="pollName">{{poll_name}}</h1>
+    <form action="submitted.html" class="pollList" method="POST">
+      {% for option in options %}
+      <li>{{option[0].upper() + option[1:]}} <input type="radio" name="options" value={{option}}></li>
+      {% endfor %}
+      <input type="submit" id="submit" value="Submit Choice">
+    </form>
+  </div>
+</body>
+
+</html>

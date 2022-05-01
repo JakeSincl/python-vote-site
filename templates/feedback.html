@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="{{ url_for('static', filename='styles/style.css') }}" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <div class="topnav">
+    <a href="home.html">Current Live Poll</a>
+    <a href="results.html">View Results</a>
+    <a class="active" href="feedback.html">Feedback</a>
+  </div>
+  
+  <h1 id="title">Please leave any feedback you have about this site :)</h1>
+  <form action="submitted.html" class="feedbackStack" method="POST">
+    <label for="feedback">Feedback:</label><br>
+    <textarea type="text" id="feedback" name="feedback" rows="4" cols="40" autofocus></textarea><br>
+    <input type="submit" id="submitFeedback" value="Submit Feedback"><br>
+  </form>  
+  
+</body>
+
+</html>
